@@ -59,8 +59,9 @@ p{margin:0 0 16px}
 .proj ul{margin:0 0 16px;padding-left:20px}
 .proj li{margin-bottom:4px}
 .stack{margin:0 0 8px}
-.shot{margin:0 0 16px}
-.shot img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.shot{display:block;width:100%;max-width:320px;margin:16px 0 0}
+.shot img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px}
+.shot:hover img,.shot:focus-visible img{border-color:var(--accent)}
 .links{margin:0;display:flex;flex-wrap:wrap;gap:8px}
 .links a{display:inline-block;padding:8px 16px;border:1px solid var(--accent);border-radius:4px;color:var(--accent);font-size:15px;font-weight:500;text-decoration:none}
 .links a:hover{background:var(--accent);color:var(--bg)}
@@ -121,8 +122,8 @@ footer p{margin:0 0 8px}
       <li>Responsive layouts, affinity scaling previews and documented formulas.</li>
       <li>Unit tests and golden integration tests.</li>
     </ul>
-    <figure class="shot"><img src="screenshot.png" width="927" height="796" loading="lazy" alt="Elden Ring Damage Calculator comparing Moonveil and Uchigatana, showing attack power by damage type, attribute scaling and blood loss buildup"></figure>
     <p class="links"><a class="primary" href="https://raed-jani.github.io/soulslike-build-planner/">Live demo</a> <a href="https://github.com/Raed-Jani/soulslike-build-planner">Source code</a></p>
+    <a class="shot" href="https://raed-jani.github.io/soulslike-build-planner/"><img src="screenshot.png" width="927" height="796" loading="lazy" alt="Open the live demo. Screenshot of the calculator comparing Moonveil and Uchigatana, with attack power by damage type, attribute scaling and blood loss buildup."></a>
     <p class="mono note">Unofficial fan tool. Not affiliated with FromSoftware or Bandai Namco. Elden Ring names and icons belong to their owners.</p>
   </article>
 
@@ -144,6 +145,7 @@ footer p{margin:0 0 8px}
     <h3>INSATivity, University Events <span class="mono">team project</span></h3>
     <p class="stack mono">PHP, JavaScript, Symfony, Twig, Supabase, PostgreSQL</p>
     <p>A collaborative platform for INSAT student events, with event filtering, a calendar, a club directory and an organizer dashboard. A separate Symfony version uses MVC, Doctrine ORM and Twig.</p>
+    <p>My part of the original version (HTML, CSS, JavaScript, PHP): the calendar and event pages, including a fix for calendar cells changing size, and changes to the event model on the backend.</p>
     <p>My part of the Symfony version: refactored the authentication, event, club and media controllers, added form types with validation for login, registration, events and feedback, and set up security rules and a custom 404 page.</p>
     <p class="links"><a href="https://github.com/AbdelAziz-Mseddi/INSATivity">Original project</a> <a href="https://github.com/AbdelAziz-Mseddi/INSATivity-Symfony">Symfony version</a></p>
   </article>
