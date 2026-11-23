@@ -49,6 +49,7 @@ nav a{color:var(--text);text-decoration:none;font-size:15px}
 nav a:hover{color:var(--accent)}
 nav a span{font-family:var(--mono);font-size:12px;color:var(--muted);margin-right:6px}
 .hint{margin:8px 0 0}
+@media (hover:none),(max-width:640px){.hint{display:none}}
 section{margin-top:56px}
 h2{display:flex;align-items:baseline;justify-content:space-between;gap:16px;font:600 22px/1.2 var(--sans);letter-spacing:-.015em;margin:0 0 24px;padding-bottom:8px;border-bottom:1px solid var(--line)}
 h2 .mono{font-weight:400}
@@ -71,6 +72,11 @@ p{margin:0 0 16px}
 dl{margin:0;display:grid;grid-template-columns:120px 1fr;gap:8px 16px}
 dt{color:var(--muted)}
 dd{margin:0}
+.learning{margin-top:32px;padding-top:16px;border-top:1px solid var(--line)}
+.learning h3{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:600 17px/1.3 var(--sans);margin:0 0 12px}
+.learning h3 .mono{font-weight:400}
+.nodes{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:0}
+.nodes li{border:1px dashed var(--muted);border-radius:4px;padding:4px 12px;font-size:15px}
 .edu strong{font-weight:600}
 footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--line)}
 footer p{margin:0 0 8px}
@@ -91,6 +97,7 @@ footer p{margin:0 0 8px}
     <h1>Raed Jani</h1>
     <p class="role">Software Engineering Student, INSAT</p>
     <p class="status">Open to internships and part-time work. Based in Tunisia.</p>
+    <p class="links" style="margin-top:16px"><a class="primary" href="Raed_Jani_CV.pdf" download>Download CV (PDF)</a></p>
   </div>
 </header>
 
@@ -132,6 +139,7 @@ footer p{margin:0 0 8px}
     <p class="stack mono">Java, JavaFX, MySQL, JDBC, jpackage</p>
     <p>A desktop application backed by a MySQL database, with separate administrator and employee roles. It covers point of sale, supplier orders, PDF reports and an audit log, follows a layered model, DAO, service and UI structure, and is packaged as a Windows executable.</p>
     <p class="links"><a href="https://github.com/Raed-Jani/pharmacy_management_system">Source code</a></p>
+    <a class="shot" href="https://github.com/Raed-Jani/pharmacy_management_system"><img src="biovera.png" width="1280" height="680" loading="lazy" alt="Open the source code. Screenshot of the BioVera Pro dashboard with navigation, stock alerts, daily sales and pending orders."></a>
   </article>
 
   <article class="proj">
@@ -168,6 +176,16 @@ footer p{margin:0 0 8px}
     <dt>Databases</dt><dd>MySQL, PostgreSQL, H2</dd>
     <dt>Tools</dt><dd>Git, Maven, Vite, Postman</dd>
   </dl>
+  <div class="learning">
+    <h3>Currently learning <span class="mono">In Progress</span></h3>
+    <ul class="nodes">
+      <li>.NET</li>
+      <li>MongoDB</li>
+      <li>Python for data analysis</li>
+      <li>AI</li>
+    </ul>
+    <p class="mono">Dashed means in progress.</p>
+  </div>
 </section>
 
 <section id="education">
@@ -186,6 +204,7 @@ footer p{margin:0 0 8px}
     <dt>GitHub</dt><dd><a href="https://github.com/Raed-Jani">github.com/Raed-Jani</a></dd>
     <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/raed-jani-635005383/">linkedin.com/in/raed-jani-635005383</a></dd>
   </dl>
+  <p class="links" style="margin-top:24px"><a class="primary" href="Raed_Jani_CV.pdf" download>Download CV (PDF)</a></p>
 </section>
 </main>
 
