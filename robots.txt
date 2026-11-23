@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raed-jani.github.io/sitemap.xml
