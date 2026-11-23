@@ -77,6 +77,15 @@ dd{margin:0}
 .learning h3 .mono{font-weight:400}
 .nodes{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px;padding:0}
 .nodes li{border:1px dashed var(--muted);border-radius:4px;padding:4px 12px;font-size:15px}
+.devlog{margin-top:16px}
+.devlog summary{display:inline-flex;gap:16px;align-items:baseline;padding:6px 12px;border:1px solid var(--line);border-radius:4px;cursor:pointer;list-style:none;font-size:15px;font-weight:500}
+.devlog summary::-webkit-details-marker{display:none}
+.devlog summary::after{content:"+";font-family:var(--mono);color:var(--accent)}
+.devlog[open] summary::after{content:"-"}
+.devlog summary:hover{border-color:var(--accent)}
+.notes{margin-top:16px}
+.notes dt{font:400 13px/1.9 var(--mono)}
+.notes dd{margin-bottom:12px}
 .edu strong{font-weight:600}
 footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--line)}
 footer p{margin:0 0 8px}
@@ -132,6 +141,14 @@ footer p{margin:0 0 8px}
     <p class="links"><a class="primary" href="https://raed-jani.github.io/soulslike-build-planner/">Live demo</a> <a href="https://github.com/Raed-Jani/soulslike-build-planner">Source code</a></p>
     <a class="shot" href="https://raed-jani.github.io/soulslike-build-planner/"><img src="screenshot.png" width="927" height="796" loading="lazy" alt="Open the live demo. Screenshot of the calculator comparing Moonveil and Uchigatana, with attack power by damage type, attribute scaling and blood loss buildup."></a>
     <p class="mono note">Unofficial fan tool. Not affiliated with FromSoftware or Bandai Namco. Elden Ring names and icons belong to their owners.</p>
+    <details class="devlog">
+      <summary><span>Dev notes</span><span class="mono">3 entries</span></summary>
+      <dl class="notes">
+        <dt>design choice</dt><dd>Comparing two builds is more useful than scoring one. Players want to know which is better, so A/B is the main feature.</dd>
+        <dt>design choice</dt><dd>Golden tests keep known results on file. If a formula change breaks an old result, the tests fail right away.</dd>
+        <dt>challenge</dt><dd>Getting the damage formulas right. There are many weapon types, affinities and special cases. I studied the game mechanics and checked my numbers against known results.</dd>
+      </dl>
+    </details>
   </article>
 
   <article class="proj">
@@ -140,6 +157,14 @@ footer p{margin:0 0 8px}
     <p>A desktop application backed by a MySQL database, with separate administrator and employee roles. It covers point of sale, supplier orders, PDF reports and an audit log, follows a layered model, DAO, service and UI structure, and is packaged as a Windows executable.</p>
     <p class="links"><a href="https://github.com/Raed-Jani/pharmacy_management_system">Source code</a></p>
     <a class="shot" href="https://github.com/Raed-Jani/pharmacy_management_system"><img src="biovera.png" width="1280" height="680" loading="lazy" alt="Open the source code. Screenshot of the BioVera Pro dashboard with navigation, stock alerts, daily sales and pending orders."></a>
+    <details class="devlog">
+      <summary><span>Dev notes</span><span class="mono">3 entries</span></summary>
+      <dl class="notes">
+        <dt>design choice</dt><dd>The DAO talks to the database. The service layer holds the rules. Keeping them apart makes the code easier to change.</dd>
+        <dt>design choice</dt><dd>JavaFX for a Java desktop app. MySQL for structured data like medicines, users, sales and stock.</dd>
+        <dt>challenge</dt><dd>Keeping sales and stock in sync. When something is sold, the stock must update correctly.</dd>
+      </dl>
+    </details>
   </article>
 
   <article class="proj">
@@ -147,6 +172,14 @@ footer p{margin:0 0 8px}
     <p class="stack mono">Java, Spring Boot, H2, Maven</p>
     <p>A REST API modeling film festival workflows: film management, jury voting, scheduling and award selection. It has six resource groups with CRUD endpoints, an average jury score per film and a festival palmares endpoint, on an in-memory H2 database.</p>
     <p class="links"><a href="https://github.com/Raed-Jani/Film-Festival-API">Source code</a></p>
+    <details class="devlog">
+      <summary><span>Dev notes</span><span class="mono">3 entries</span></summary>
+      <dl class="notes">
+        <dt>design choice</dt><dd>Controllers take requests, services hold the logic, repositories talk to the database. One job per layer.</dd>
+        <dt>design choice</dt><dd>H2 is light and easy to set up, so I could build and test without installing a database.</dd>
+        <dt>challenge</dt><dd>Linking films, screenings and awards in a way that makes sense.</dd>
+      </dl>
+    </details>
   </article>
 
   <article class="proj">
@@ -156,6 +189,13 @@ footer p{margin:0 0 8px}
     <p>My part of the original version (HTML, CSS, JavaScript, PHP): the calendar and event pages, including a fix for calendar cells changing size, and changes to the event model on the backend.</p>
     <p>My part of the Symfony version: refactored the authentication, event, club and media controllers, added form types with validation for login, registration, events and feedback, and set up security rules and a custom 404 page.</p>
     <p class="links"><a href="https://github.com/AbdelAziz-Mseddi/INSATivity">Original project</a> <a href="https://github.com/AbdelAziz-Mseddi/INSATivity-Symfony">Symfony version</a></p>
+    <details class="devlog">
+      <summary><span>Dev notes</span><span class="mono">2 entries</span></summary>
+      <dl class="notes">
+        <dt>design choice</dt><dd>The first version was plain PHP. We moved to Symfony for cleaner structure, routing and forms.</dd>
+        <dt>challenge</dt><dd>Reading the old controllers before changing them. I had to understand them first so nothing broke.</dd>
+      </dl>
+    </details>
   </article>
 
   <article class="proj">
@@ -163,6 +203,13 @@ footer p{margin:0 0 8px}
     <p class="stack mono">C, Winsock2</p>
     <p>Four small applications exploring network programming in C on Windows.</p>
     <p class="links"><a href="https://github.com/Raed-Jani/Socket-Project">Source code</a></p>
+    <details class="devlog">
+      <summary><span>Dev notes</span><span class="mono">2 entries</span></summary>
+      <dl class="notes">
+        <dt>challenge</dt><dd>Making client and server talk: opening a connection, sending messages and handling failures.</dd>
+        <dt>lesson</dt><dd>How sockets let two programs talk over a network, with IP addresses, ports and TCP.</dd>
+      </dl>
+    </details>
   </article>
 </section>
 
@@ -177,7 +224,7 @@ footer p{margin:0 0 8px}
     <dt>Tools</dt><dd>Git, Maven, Vite, Postman</dd>
   </dl>
   <div class="learning">
-    <h3>Currently learning <span class="mono">In Progress</span></h3>
+    <h3>Currently learning <span class="mono">In progress</span></h3>
     <ul class="nodes">
       <li>.NET</li>
       <li>MongoDB</li>
@@ -193,6 +240,11 @@ footer p{margin:0 0 8px}
   <div class="edu">
     <p><strong>INSAT, Institut National des Sciences Appliquées et de Technologie</strong><br>
     Software Engineering, GL3. Expected graduation 2029.</p>
+  </div>
+  <div class="edu">
+    <p><strong>Lycée pilote de Medenine</strong><br>
+    Baccalauréat in Mathematics | June 2023<br>
+    Mention Très Bien, average 18.84/20</p>
   </div>
 </section>
 
